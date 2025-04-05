@@ -1,0 +1,8 @@
+<div class="container-lg" *ngIf="!showForm; else orderSuccess">
+    <order-form (showForm)="orderForm()"></order-form>
+</div>
+
+
+<ng-template #orderSuccess>
+  <order-success></order-success>
+</ng-template>
