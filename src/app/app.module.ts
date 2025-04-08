@@ -14,8 +14,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NameValidatorDirective } from './directives/name-validator.directive';
 import { LastNameValidatorDirective } from './directives/last-name-validator.directive';
 import { FormExistsDirective } from './directives/form-exists.directive';
-import {OrderFormComponent} from "./components/pages/order/order-form/order-form.component";
-import {OrderSuccessComponent} from "./components/pages/order/order-success/order-success.component";
 
 @NgModule({
   declarations: [
@@ -29,8 +27,6 @@ import {OrderSuccessComponent} from "./components/pages/order/order-success/orde
     NameValidatorDirective,
     LastNameValidatorDirective,
     FormExistsDirective,
-    OrderFormComponent,
-    OrderSuccessComponent
   ],
     imports: [
         BrowserModule,
