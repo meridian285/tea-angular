@@ -14,7 +14,8 @@ import {OrderService} from "../../../services/order.service";
 })
 export class OrderComponent implements OnInit, OnDestroy {
 
-  public showForm: boolean = false;
+  public showForm: boolean = true;
+  showErrorMessage: boolean = false;
 
   orderForm = this.fb.group({
     name: ['', {
@@ -38,23 +39,23 @@ export class OrderComponent implements OnInit, OnDestroy {
       updateOn: 'blur'
     }],
     address: ['', {
-      validators: [Validators.required, Validators.pattern(/([а-яёА-ЯЁ0-9\s\-\\])/)],
+      validators: [Validators.required, Validators.pattern(/([а-яёА-ЯЁ0-9\s\-\\\/])+$/)],
       updateOn: 'blur'
     }],
     product: [{value: '', disabled: true}],
     comment: [''],
-  })
+    })
 
-  order: OrderType = {
-    name: '',
-    last_name: '',
-    phone: '',
-    country: '',
-    zip: '',
-    product: '',
-    address: '',
-    comment: '',
-  }
+  // order: OrderType = {
+  //   name: '',
+  //   last_name: '',
+  //   phone: 0,
+  //   country: '',
+  //   zip: '',
+  //   product: '',
+  //   address: '',
+  //   comment: '',
+  // }
 
   private subscription: Subscription | null = null;
 
@@ -66,27 +67,29 @@ export class OrderComponent implements OnInit, OnDestroy {
   }
 
   send() {
-    this.order = {
+    const order = {
       name: String(this.orderForm.value.name),
       last_name: String(this.orderForm.value.lastName),
-      phone: String(this.orderForm.value.phone),
+      phone: Number(this.orderForm.value.phone),
       country: String(this.orderForm.value.country),
       zip: String(this.orderForm.value.zip),
-      product: String(this.orderForm.value.product),
+      product: String(this.orderForm.getRawValue().product),
       address: String(this.orderForm.value.address),
       comment: String(this.orderForm.value.comment),
-
     }
 
-    this.orderService.createOrder(this.order)
+    this.orderService.createOrder(order)
       .subscribe(response => {
         if (response.success) {
           console.log('спасибо за заказ!');
-          this.showForm = true;
+          this.showForm = false;
+          this.showErrorMessage = false;
           this.orderForm.reset();
 
         } else {
-          this.showForm = false;
+          this.showForm = true;
+          this.showErrorMessage = true;
+          console.log(this.orderForm.value)
           console.log('Произошла ошибка. Попробуйте еще раз.');
         }
       });

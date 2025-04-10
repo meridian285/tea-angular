@@ -1,7 +1,7 @@
 export type OrderType = {
   name: string,
   last_name: string,
-  phone: string,
+  phone: number,
   country: string,
   zip: string,
   product: string,

@@ -1,8 +1,8 @@
-<div class="container-lg" *ngIf="!showForm; else orderSuccess">
+<div class="container-lg" *ngIf="showForm; else orderSuccess">
   <div class="order-section mt-5 h-100">
     <div class="form-section row">
       <h2 class="fs-2 fw-bold text-center">Сделать заказ</h2>
-      <form role="form" [formGroup]="orderForm" id="form" class="mt-4 mb-5 col-md-6 mx-auto ">
+      <form role="form" [formGroup]="orderForm" (ngSubmit)="send()" id="form" class="mt-4 mb-5 col-md-6 mx-auto ">
         <div>
           <div>
 
@@ -123,9 +123,13 @@
           <textarea class="form-control" id="comment" formControlName="comment" name="comment"></textarea>
         </div>
 
+
+
         <div class="active-button">
-          <button id="button" type="submit" class=" btn btn-primary w-50-lg hvr-push" (click)="send()">Отправить
-          </button>
+          <div class="invalid-feedback" *ngIf="showErrorMessage">
+            Произошла ошибка. Попробуйте еще раз.
+          </div>
+          <button id="button" type="submit" class=" btn btn-primary w-50-lg hvr-push">Отправить</button>
         </div>
       </form>
     </div>
