@@ -4,20 +4,20 @@
   src: url(assets/fonts/Arial.ttf);
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: Arial, sans-serif;
   height: 100%;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.content {
-  flex: 1 0 auto;
-}
-
+//.wrapper {
+//  display: flex;
+//  flex-direction: column;
+//  height: 100%;
+//}
 
 .text {
   /* margin-bottom: 70px; */

@@ -67,6 +67,11 @@ export class OrderComponent implements OnInit, OnDestroy {
   }
 
   send() {
+    if(this.orderForm.invalid) {
+      this.orderForm.markAllAsTouched();
+      return;
+    }
+
     const order = {
       name: String(this.orderForm.value.name),
       last_name: String(this.orderForm.value.lastName),
