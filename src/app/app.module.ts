@@ -14,6 +14,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NameValidatorDirective } from './directives/name-validator.directive';
 import { LastNameValidatorDirective } from './directives/last-name-validator.directive';
 import { FormExistsDirective } from './directives/form-exists.directive';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FormExistsDirective } from './directives/form-exists.directive';
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgbModule
     ],
   providers: [],
   bootstrap: [AppComponent]
