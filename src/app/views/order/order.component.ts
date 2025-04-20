@@ -1,10 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
-import {OrderType} from "../../../types/order.type";
 import {Subscription} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
-import {ProductService} from "../../../services/product.service";
-import {OrderService} from "../../../services/order.service";
+import {ProductService} from "../../shared/services/product.service";
+import {OrderService} from "../../shared/services/order.service";
 
 
 @Component({

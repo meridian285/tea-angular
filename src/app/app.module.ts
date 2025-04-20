@@ -1,43 +1,35 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/common/header/header.component';
-import { MainComponent } from './components/pages/main/main.component';
-import { FooterComponent } from './components/common/footer/footer.component';
-import { OrderComponent } from './components/pages/order/order.component';
-import { ProductsComponent } from './components/pages/products/products.component';
-import { ProductComponent } from './components/pages/product/product.component';
-import { HttpClientModule} from "@angular/common/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { NameValidatorDirective } from './directives/name-validator.directive';
-import { LastNameValidatorDirective } from './directives/last-name-validator.directive';
-import { FormExistsDirective } from './directives/form-exists.directive';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HttpClientModule} from "@angular/common/http";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {SharedModule} from "./shared/shared.module";
+import {HeaderComponent} from "./shared/layout/header/header.component";
+import {FooterComponent} from "./shared/layout/footer/footer.component";
+import {OrderModule} from "./views/order/order.module";
+import {ProductsModule} from "./views/products/products.module";
+import {HomeModule} from "./views/home/home.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MainComponent,
     FooterComponent,
-    OrderComponent,
-    ProductsComponent,
-    ProductComponent,
-    NameValidatorDirective,
-    LastNameValidatorDirective,
-    FormExistsDirective,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        NgbModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    SharedModule,
+    OrderModule,
+    ProductsModule,
+    HomeModule,
+    NgbModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
