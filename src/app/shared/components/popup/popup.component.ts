@@ -13,9 +13,7 @@ export class PopupComponent {
   @ViewChild('popup')
   popup!: TemplateRef<ElementRef>;
 
-  constructor(private modalService: NgbModal,
-              // public activeModal: NgbActiveModal
-  ) { }
+  constructor(private modalService: NgbModal, public activeModal: NgbActiveModal) { }
 
   open(): void {
     this.modalService.open(this.popup);

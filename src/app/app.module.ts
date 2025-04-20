@@ -10,6 +10,7 @@ import {FooterComponent} from "./shared/layout/footer/footer.component";
 import {OrderModule} from "./views/order/order.module";
 import {ProductsModule} from "./views/products/products.module";
 import {HomeModule} from "./views/home/home.module";
+import {NgbActiveModal, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -25,8 +26,11 @@ import {HomeModule} from "./views/home/home.module";
     OrderModule,
     ProductsModule,
     HomeModule,
+    NgbModule,
   ],
-  providers: [],
+  providers: [
+    NgbActiveModal
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

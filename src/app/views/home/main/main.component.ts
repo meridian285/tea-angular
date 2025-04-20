@@ -20,7 +20,7 @@ export class MainComponent implements OnInit, OnDestroy {
   @ViewChild(PopupComponent)
   private popupComponent!: PopupComponent;
 
-  constructor() {
+  constructor(public activeModal: NgbActiveModal) {
   }
 
   ngOnInit() {

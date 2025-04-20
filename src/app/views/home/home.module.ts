@@ -5,7 +5,6 @@ import { HomeRoutingModule } from './home-routing.module';
 import {MainComponent} from "./main/main.component";
 import {RouterModule} from "@angular/router";
 import {SharedModule} from "../../shared/shared.module";
-import {NgbModalModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -17,7 +16,6 @@ import {NgbModalModule} from "@ng-bootstrap/ng-bootstrap";
     HomeRoutingModule,
     RouterModule,
     SharedModule,
-    NgbModalModule
   ],
   exports: [
     HomeRoutingModule
