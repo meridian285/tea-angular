@@ -14,7 +14,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   public loading: boolean = false;
   public popupBg: boolean = false;
-  private timer: Observable<number> = timer(1);
+  private timer: Observable<number> = timer(10000);
   private subscription: Subscription | null = null;
 
   @ViewChild(PopupComponent)

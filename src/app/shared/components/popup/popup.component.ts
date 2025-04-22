@@ -1,5 +1,6 @@
 import {Component, ElementRef, Input, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {NgbActiveModal, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgbActiveModal, NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-popup',
@@ -13,9 +14,22 @@ export class PopupComponent {
   @ViewChild('popup')
   popup!: TemplateRef<ElementRef>;
 
-  constructor(private modalService: NgbModal, public activeModal: NgbActiveModal) { }
+  private modalRef!: NgbModalRef;
+
+  constructor(private modalService: NgbModal, public activeModal: NgbActiveModal, private router: Router) { }
 
   open(): void {
-    this.modalService.open(this.popup);
+    this.modalRef = this.modalService.open(this.popup);
+  }
+
+  goToProducts(): void {
+    if (this.modalRef) {
+      this.modalRef.close();
+      this.router.navigate(['products']);
+    }
+  }
+
+  closeModal() {
+    this.modalRef.close();
   }
 }
