@@ -1,0 +1,16 @@
+<ng-template #popup>
+    <div class="modal-dialog bg-white rounded">
+      <div class="modal-content p-3">
+        <div class="modal-header flex-row-reverse">
+          <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body fs-2 p-3">
+          Посмотрите наши чайные коллекции
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-primary col-sm-12" (click)="goToProducts()">Смотреть</a>
+        </div>
+      </div>
+    </div>
+</ng-template>
+

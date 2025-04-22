@@ -1,0 +1,16 @@
+<div class="product">
+  <div class="d-flex flex">
+    <img src="{{product.image}}" class="image" alt="{{product.title}}">
+    <p>
+    <div>
+      <h5 class="card-title fw-bold mb-2 fs-4">{{product.title}}</h5>
+      <p class="card-text">{{product.description}}
+      </p>
+    <span>Цена: {{product.price}}</span>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <a routerLink="/order" [queryParams]="{product: product.title}" class="btn btn-primary w-50 hvr-push mt-2">Купить</a>
+  </div>
+</div>

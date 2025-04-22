@@ -1,1 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Arial;
+  src: url(assets/fonts/Arial.ttf);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+//.wrapper {
+//  display: flex;
+//  flex-direction: column;
+//  height: 100%;
+//}
+
+.text {
+  /* margin-bottom: 70px; */
+  font-size: 20px;
+}
+
+.text-content {
+  width: 460px;
+  left: 120px;
+}
+
+.ui-accordion-content {
+  border: 0;
+}
+
+.ui-accordion-content p{
+  margin: 0;
+}
+
+.ui-state-default {
+  color: #ffffff;
+  background: linear-gradient(360deg, #076BFF 0%, #007BFF 100%);
+}
+
+.ui-accordion .ui-accordion-header {
+  margin: 10px 0 0 0;
+}
+
+.accordion-btn {
+  position: relative;
+}
+
+.accordion-btn::after {
+  width: 20px;
+  height: 15px;
+  position: absolute;
+  top: 20px;
+  right: 32px;
+  margin-left: auto;
+  content: " ";
+  background-image: url(assets/images/accordion-arrow.png);
+  background-repeat: no-repeat;
+  transition: transform .2s ease-in-out;
+}
+
+.accordion-btn:not(.ui-state-active)::after {
+  transform: rotate(-180deg);
+}
+
+.error {
+  color: red;
+}
+
+.message {
+  max-width: 500px;
+  height: 300px;
+  display: none;
+}
+
+.image-popup {
+  cursor: zoom-in;
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.invalid-feedback {
+  display: block;
+}
+
+//input.ng-invalid.ng-dirty + label,
+//input.ng-invalid.ng-touched + label {
+//  color: red;
+//}
+
+
+@media screen and (max-width: 960px) {
+  .active-button {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .text-content {
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
+  .slide-btn {
+    width: 50%;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .accordion-btn::after {
+    display: none;
+  }
+
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .text {
+    display: none;
+  }
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
